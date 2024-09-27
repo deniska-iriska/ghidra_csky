@@ -73,6 +73,6 @@ pop16lr:, r15 is i16_bit_0404 = 0b1 & i16_bit_0003 != 0x0 & r15 {pop(r15);}
     local tmp:4;
     build pop16lr;
     build pop16list;
-    tmp:4 = r15 & 0xfffffffe;
+    tmp = r15 & 0xfffffffe;
     return [tmp];
 }

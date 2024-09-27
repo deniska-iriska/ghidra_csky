@@ -138,10 +138,11 @@ pop32r28:r28 is i32_bit_0808 = 0b1 & r28 {pop(r28);}
 pop32r28:, r28 is i32_bit_0808 = 0b1 & (i32_bit_0003 != 0x0 | i32_bit_0404 != 0x0 | i32_bit_0507 != 0) & r28 {pop(r28);}
 
 :pop pop32list1 pop32lr pop32list2 pop32r28 is i32_op = 0b1010 & i32_bit_2125 = 0b11110 & i32_bit_1620 = 0x0 & i32_bit_0915 = 0x0 & pop32list1 & pop32lr & pop32list2 & pop32r28 {
-    local tmp:4 = r15 & 0xfffffffe;
+    local tmp:4;
     build pop32r28;
     build pop32list2;
     build pop32lr;
     build pop32list1;
+    tmp = r15 & 0xfffffffe;
     return [tmp];
 }

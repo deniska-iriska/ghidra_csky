@@ -35,7 +35,7 @@
 # multi-register access Part
 
 push16list: is i16_bit_0003 = 0x0 {}
-push16list: {r4} is i16_bit_0003 = 0x1 & r4 {push(r4);}
+push16list: r4 is i16_bit_0003 = 0x1 & r4 {push(r4);}
 push16list: {r4,r5} is i16_bit_0003 = 0x2 & r4 & r5 {push(r4); push(r5);}
 push16list: {r4,r5,r6} is i16_bit_0003 = 0x3 & r4 & r5 & r6 {push(r4); push(r5); push(r6);}
 push16list: {r4,r5,r6,r7} is i16_bit_0003 = 0x4 & r4 & r5 & r6 & r7 {push(r4); push(r5); push(r6); push(r7);}
@@ -55,7 +55,7 @@ push16lr:, r15 is i16_bit_0404 = 0b1 & i16_bit_0003 != 0x0 & r15 {push(r15);}
 }
 
 pop16list: is i16_bit_0003 = 0x0 {}
-pop16list: {r4} is i16_bit_0003 = 0x1 & r4 {pop(r4);}
+pop16list: r4 is i16_bit_0003 = 0x1 & r4 {pop(r4);}
 pop16list: {r4,r5} is i16_bit_0003 = 0x2 & r4 & r5 {pop(r4); pop(r5);}
 pop16list: {r4,r5,r6} is i16_bit_0003 = 0x3 & r4 & r5 & r6 {pop(r4); pop(r5); pop(r6);}
 pop16list: {r4,r5,r6,r7} is i16_bit_0003 = 0x4 & r4 & r5 & r6 & r7 {pop(r4); pop(r5); pop(r6); pop(r7);}

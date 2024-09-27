@@ -103,8 +103,7 @@ push32list2: r16 is i32_bit_0507 = 0x1 & r16 {push(r16);}
 push32list2: {r16,r17} is i32_bit_0507 = 0x2 & r16 & r17 {push(r16); push(r17);}
 
 push32r28: is i32_bit_0808 = 0b0 {}
-push32r28:r28 is i32_bit_0808 = 0b1 & r28 {push(r28);}
-push32r28:, r28 is i32_bit_0808 = 0b1 & (i32_bit_0003 != 0x0 | i32_bit_0404 != 0x0 | i32_bit_0507 != 0) & r28 {push(r28);}
+push32r28: r28 is i32_bit_0808 = 0b1 & r28 {push(r28);}
 
 push32sep:, i32_bit_0404 != 0x0 | i32_bit_0507 != 0x0 | i32_bit_0808 != 0x0 {}
 
@@ -149,5 +148,6 @@ pop32sep:, i32_bit_0003 != 0x0 | i32_bit_0507 != 0x0 | i32_bit_0808 != 0x0 {}
     build pop32lr;
     build pop32sep;
     build pop32list1;
-    return [r15 & 0xfffffffe];
+    local tmp:4 = r15 & 0xfffffffe;
+    return [tmp];
 }

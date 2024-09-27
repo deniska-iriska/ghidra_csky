@@ -70,8 +70,9 @@ pop16lr:, r15 is i16_bit_0404 = 0b1 & i16_bit_0003 != 0x0 & r15 {pop(r15);}
 
 # pop
 :pop pop16list pop16lr is i16_optype = 0b00 & i16_4op = 0b0101 & i16_bit_0509 = 0b00100 & pop16list & pop16lr {
-    local tmp:4 = r15 & 0xfffffffe;
+    local tmp:4;
     build pop16lr;
     build pop16list;
+    tmp:4 = r15 & 0xfffffffe;
     return [tmp];
 }
